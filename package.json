@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "moment": "^2.25.3",
     "regenerator-runtime": "^0.13.5"
   }
 }
