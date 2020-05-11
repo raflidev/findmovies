@@ -7,15 +7,14 @@ const main = () => {
   const enterSearch = async () => {
     try {
       const result = await Api.getData(searchValue.value);
-      console.log(result);
 
-      result.forEach((movie) => {
+      result.forEach(movie => {
         movieList.innerHTML += `
           <div class="col-sm-12 col-lg-3 mt-3">
             <div class="card">
-              <img src="https://image.tmdb.org/t/p/original/${
-                movie.poster_path
-              }" class="card-img-top" alt="Poster ${movie.title}" />
+            <img src="https://image.tmdb.org/t/p/original/${
+              movie.poster_path
+            }" class="card-img-top" alt="Poster ${movie.title}" />
               <div class="card-body">
                 <h5 class="card-title">${movie.title}</h5>
                 <p class="card-text">
@@ -32,7 +31,7 @@ const main = () => {
       console.log(message);
     }
   };
-  search.addEventListener("keyup", function (event) {
+  search.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
       movieList.innerHTML = "";
       enterSearch();
@@ -42,5 +41,3 @@ const main = () => {
 };
 
 export default main;
-
-// error di promise
