@@ -1,4 +1,7 @@
+import "../component/movieList.js";
+import "../component/searchbar.js";
 import Api from "../data/api.js";
+
 const moment = require("moment");
 const main = () => {
   const searchValue = document.querySelector("#search");
@@ -8,7 +11,7 @@ const main = () => {
     try {
       const result = await Api.getData(searchValue.value);
 
-      result.forEach(movie => {
+      result.forEach((movie) => {
         movieList.innerHTML += `
           <div class="col-sm-12 col-lg-3 mt-3">
             <div class="card">
@@ -28,10 +31,12 @@ const main = () => {
         `;
       });
     } catch (message) {
-      console.log(message);
+      movieList.innerHTML = `
+      <h2 class="mt-4 mx-auto">${message}</h2>
+      `;
     }
   };
-  search.addEventListener("keyup", function(event) {
+  searchValue.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
       movieList.innerHTML = "";
       enterSearch();
