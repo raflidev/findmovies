@@ -11,15 +11,15 @@ const main = () => {
     try {
       const result = await Api.getData(searchValue.value);
 
-      result.forEach((movie) => {
+      result.forEach(movie => {
         movieList.innerHTML += `
-          <div class="col-sm-12 col-lg-3 mt-3">
-            <div class="card">
-            <img src="https://image.tmdb.org/t/p/original/${
-              movie.poster_path
-            }" class="card-img-top" alt="Poster ${movie.title}" />
-              <div class="card-body">
-                <h5 class="card-title">${movie.title}</h5>
+        <div class="col-sm-12 col-lg-3 mt-3">
+        <div class="card">
+        <img src="https://image.tmdb.org/t/p/original/${
+          movie.poster_path
+        }" class="card-img-top" alt="Poster ${movie.title}" />
+            <div class="card-body">
+            <h5 class="card-title">${movie.title}</h5>
                 <p class="card-text">
                   ${moment(movie.release_date).format("YYYY")}<br>
                   &#9734; ${movie.vote_average}
@@ -27,8 +27,8 @@ const main = () => {
                 <a href="#">Detail</a>
               </div>
             </div>
-          </div>
-        `;
+            </div>
+            `;
       });
     } catch (message) {
       movieList.innerHTML = `
@@ -36,7 +36,7 @@ const main = () => {
       `;
     }
   };
-  searchValue.addEventListener("keyup", function (event) {
+  searchValue.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
       movieList.innerHTML = "";
       enterSearch();
