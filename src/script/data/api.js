@@ -14,6 +14,18 @@ class Api {
         }
       });
   }
+
+  static getDataById(keywordId) {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${keywordId}?api_key=10a5666a977bc4dbc63b97688d306a00`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((responseJson) => {
+        return Promise.resolve(responseJson);
+      });
+  }
 }
 
 export default Api;
