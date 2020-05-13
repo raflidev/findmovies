@@ -6,7 +6,9 @@ class movieList extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="container">
-    <div class="row" id="movie-list"></div>
+    <div id="search-list"></div>
+    <div class="row" id="movie-list">
+    </div>
   </div>
         `;
   }

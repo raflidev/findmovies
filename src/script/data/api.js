@@ -26,6 +26,18 @@ class Api {
         return Promise.resolve(responseJson);
       });
   }
+
+  static getTvShow(keyword) {
+    return fetch(
+      `https://api.themoviedb.org/3/search/tv?api_key=10a5666a977bc4dbc63b97688d306a00&query=${keyword}`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((responseJson) => {
+        return Promise.resolve(responseJson);
+      });
+  }
 }
 
 export default Api;

@@ -4,11 +4,20 @@ class searchbar extends HTMLElement {
   }
   render() {
     this.innerHTML = `
-        <div class="container">
-      <h1 class="mt-4">Find your favorite movie.</h1>
-      <input
-        class="form-control mt-4" type="text" id="search" placeholder="Search Movie .."/>
+    <div class="jumbotron jumbotron-fluid bg-dark text-white">
+    <div class="container">
+    <h1>Hello and welcome.</h1>
+    <p class="lead">Find information your favorite movie and TV series based by themoviedb.</p>
+    <div class="row mt-4">
+      <div class="col-sm-12 col-lg-8">
+      <input class="form-control" type="text" id="search" placeholder="Search Movie .."/>
+      </div>
+      <div class="col-sm-12 col-lg-4">
+      <button class="btn btn-primary px-4" id="search-button">Search</button>
+      </div>
     </div>
+    </div>
+  </div>
         `;
   }
 }
