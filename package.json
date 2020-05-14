@@ -4,8 +4,9 @@
   "description": "find your favorite movie",
   "main": "app.js",
   "scripts": {
-    "start": "http-server .",
-    "start-dev": "webpack-dev-server --config webpack.dev.js --open"
+    "start": "http-server ./dist",
+    "start-dev": "webpack-dev-server --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "Rafli Ramadhan <rafliramdhn@gmail.com>",
   "license": "MIT",
@@ -25,6 +26,7 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.1",
+    "jsdom": "^16.2.2",
     "moment": "^2.25.3",
     "popper.js": "^1.16.1",
     "regenerator-runtime": "^0.13.5"

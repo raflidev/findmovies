@@ -7,13 +7,13 @@ class searchbar extends HTMLElement {
     <div class="jumbotron jumbotron-fluid bg-dark text-white">
     <div class="container">
     <h1>Hello and welcome.</h1>
-    <p class="lead">Find information your favorite movie and TV series based by themoviedb.</p>
+    <p class="lead">Find information your favorite movie and TV show based by themoviedb.</p>
     <div class="row mt-4">
-      <div class="col-sm-12 col-lg-8">
-      <input class="form-control" type="text" id="search" placeholder="Search Movie .."/>
+      <div class="col-sm-12 col-lg-8 mt-3">
+      <input class="form-control" type="text" id="search" placeholder="Search Movie or TV show.."/>
       </div>
       <div class="col-sm-12 col-lg-4">
-      <button class="btn btn-primary px-4" id="search-button">Search</button>
+      <button class="btn btn-primary px-4 form-control mt-3" id="search-button">Search</button>
       </div>
     </div>
     </div>
