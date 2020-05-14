@@ -59,6 +59,19 @@ const main = () => {
       async function detailMovie(id) {
         try {
           const resultDetail = await Api.getDataById(id);
+          console.log(resultDetail);
+
+          const production = [];
+
+          resultDetail.production_companies.forEach(item => {
+            production.push(item.name);
+          });
+
+          const genre = [];
+          resultDetail.genres.forEach(item => {
+            genre.push(item.name);
+          });
+
           $(".modal-body").html(`
           <div class="row">
           <div class="col-sm-12 col-lg-5">
@@ -73,12 +86,11 @@ const main = () => {
           <div class="col-lg-7">
             <ul class="list-group">
               <li class="list-group-item">${resultDetail.title}</li>
-              <li class="list-group-item">Genre : ${
-                resultDetail.genres[0].name
-              }</li>
-              <li class="list-group-item">Release Date : ${
+              <li class="list-group-item">Genre : ${genre}</li>
+              <li class="list-group-item">Release Date : ${moment(
                 resultDetail.release_date
-              }</li>
+              ).format("DD MMMM YYYY")}</li>
+              <li class="list-group-item">Production : ${production}</li>
               <li class="list-group-item">Sinopsis : ${
                 resultDetail.overview
               }</li>
