@@ -1,3 +1,4 @@
+import $ from "jquery";
 import "regenerator-runtime/runtime";
 import "./script/component/";
 import "./style/style.css";
